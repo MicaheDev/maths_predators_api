@@ -1,0 +1,34 @@
+# Ignorar archivos generados por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos generados por el entorno de desarrollo
+node_modules/
+npm-debug.log
+yarn-debug.log*
+yarn-error.log*
+
+# Ignorar archivos de construcción y dependencias
+/build/
+/dist/
+/.cache/
+*.log
+*.lock
+
+# Ignorar archivos específicos de la configuración del IDE
+.vscode/
+.idea/
+
+# Ignorar archivos de respaldo
+*.bak
+*.backup
+
+# Ignorar archivos de configuración personal
+*.config
+
+# Ignorar archivos de compilación
+*.pyc
+
+# Ignorar archivos de caché y datos temporales
+.cache/
+*.swp
