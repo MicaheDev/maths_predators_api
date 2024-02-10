@@ -12,10 +12,13 @@ const server = http.createServer(app);
 app.use(cors());
 app.use(express.json());
 
-app.use("/", (_req, res) => {
-  res.send("Hola");
+import { coursesRouter } from "./courses/courses.route";
+
+app.get("/", (_req, res) => {
+  res.json({ welcome: "Bienvenido" });
 });
 
+app.use("/api", coursesRouter);
 // Inicio del servidor
 server.listen(setting.PORT, () => {
   logger.info(`Servidor corriendo en http://localhost:${setting.PORT || 3001}`);
@@ -24,8 +27,7 @@ server.listen(setting.PORT, () => {
 // Middleware de manejo de errores
 app.use((err: any, _req, res: any) => {
   console.error(err.message);
-  res.status(err.status || 500);
-  res.send({
+  res.json({
     error: {
       status: err.status || 500,
       message: err.message,
