@@ -1,11 +1,8 @@
 import axios from "axios";
+import setting from "../config/settings";
 
-const owner: string = "MicaheDev";
-const repo: string = "maths_predator_courses";
-const path: string = "es/contents";
-const baseUrl = `https://api.github.com/repos/${owner}/${repo}/contents${path}`;
-const token = "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";
-const url = `https://raw.githubusercontent.com/${owner}/${repo}/master/es/contents`
+const baseUrl = `https://api.github.com/repos/${setting.OWNER}/${setting.REPO}/contents/es/contents`;
+const url = `https://raw.githubusercontent.com/${setting.OWNER}/${setting.REPO}/master/es/contents`;
 
 let cachedCoursesES: any = null;
 
@@ -20,11 +17,10 @@ async function getCoursesES() {
         {
           part: "part 1",
           id: "part1",
+          color: "red",
           name: "Fundamentos de Matemáticas",
           path: "es/contents/part1",
-          description: await getMarkdown(
-            `${url}/part1/index.md`
-          ),
+          description: await getMarkdown(`${url}/part1/index.md`),
           previewImage: await getResource(
             `${baseUrl}/part1/preview.png?ref=master`
           ),
@@ -32,9 +28,7 @@ async function getCoursesES() {
             {
               subPart: "a",
               name: "Teoria de los Numeros",
-              description: await getMarkdown(
-                `${url}/part1/a/index.md`
-              ),
+              description: await getMarkdown(`${url}/part1/a/index.md`),
               contents: [
                 {
                   title: "Numeros naturales",
@@ -48,15 +42,29 @@ async function getCoursesES() {
         },
         {
           part: "part 2",
+          color: "green",
           id: "part2",
           name: "Álgebra Elemental",
           path: "es/contents/part2",
-          description: await getMarkdown(
-            `${url}/part2/index.md`
-          ),
+          description: await getMarkdown(`${url}/part2/index.md`),
           previewImage: await getResource(
             `${baseUrl}/part2/preview.png?ref=master`
           ),
+          subParts: [
+            {
+              subPart: "a",
+              name: "Concepto de variable y expresiones algebraicas",
+              description: await getMarkdown(`${url}/part2/a/index.md`),
+              contents: [
+                {
+                  title: "Variables",
+                  content: await getMarkdown(
+                    `${url}/part2/a/1_variables.md`
+                  ),
+                },
+              ],
+            },
+          ],
         },
       ];
 
@@ -77,11 +85,13 @@ async function getResource(url: string) {
   try {
     const response = await axios.get(url, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${setting.TOKEN}`,
       },
     });
     return response.data;
   } catch (error) {
+    console.log(error);
+
     return { error: error };
   }
 }
@@ -90,31 +100,65 @@ async function getMarkdown(url: string) {
   try {
     const response = await axios.get(url, {
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${setting.TOKEN}`,
       },
       responseType: "text",
     });
     return response.data;
   } catch (error) {
+    console.log(error);
     return { error: error };
   }
 }
 
 export const CoursesController = {
-  async handleGetCourses(_req: any, res: any) {
-    // Obtener los cursos desde la caché o realizar una nueva solicitud si no están en caché
-    const coursesES = await getCoursesES();
-    res.json(coursesES);
+  async handleGetCourses(_req: any, res: any, next: any) {
+    try {
+      // Obtener los cursos desde la caché o realizar una nueva solicitud si no están en caché
+      const coursesES = await getCoursesES();
+      res.json(coursesES);
+    } catch (error) {
+      next(error);
+    }
   },
 
-  async handleGetCoursesByPart(req: any, res: any) {
-    const { partParam } = req.params;
-    const coursesES = await getCoursesES();
-    const coursePart = coursesES.find((part: any) => part.id === partParam);
-    if (coursePart) {
-      res.json(coursePart);
-    } else {
-      res.status(404).json({ error: "Part not found" });
+  async handleGetCoursesByPart(req: any, res: any, next: any) {
+    try {
+      const { partParam } = req.params;
+      const coursesES = await getCoursesES();
+      const coursePart = coursesES.find((part: any) => part.id === partParam);
+      if (coursePart) {
+        res.json(coursePart);
+      } else {
+        res.status(404).json({ error: "Part not found" });
+      }
+    } catch (error) {
+      next(error);
+    }
+  },
+
+  async handleGetCourseBySubPart(req: any, res: any, next: any) {
+    try {
+      const { partParam } = req.params;
+      const { subPartParam } = req.params;
+      const coursesES = await getCoursesES();
+      const coursePart = coursesES.find((part: any) => part.id === partParam);
+      if (coursePart.subParts) {
+        const subPart = coursePart.subParts.find(
+          (subPart: any) =>
+            subPart.name.replace(/ /g, "_").toLowerCase() === subPartParam
+        );
+
+        if (subPart) {
+          res.json(subPart);
+        } else {
+          res.status(404).json({ error: "Part not found" });
+        }
+      } else {
+        res.status(404).json({ error: "Part not found" });
+      }
+    } catch (error) {
+      next(error);
     }
   },
 };

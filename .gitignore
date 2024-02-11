@@ -23,6 +23,11 @@ yarn-error.log*
 *.bak
 *.backup
 
+# Ignorar archivos locales de configuracion
+.env
+.env.local
+.env.*.local
+
 # Ignorar archivos de configuración personal
 *.config
 
