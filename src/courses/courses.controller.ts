@@ -15,7 +15,7 @@ async function getCoursesES() {
       // Realizar una nueva solicitud para obtener los cursos
       const coursesES = [
         {
-          part: "part 1",
+          part: "parte 1",
           id: "part1",
           color: "red",
           name: "Fundamentos de Matemáticas",
@@ -41,7 +41,7 @@ async function getCoursesES() {
           ],
         },
         {
-          part: "part 2",
+          part: "parte 2",
           color: "green",
           id: "part2",
           name: "Álgebra Elemental",
@@ -58,9 +58,7 @@ async function getCoursesES() {
               contents: [
                 {
                   title: "Variables",
-                  content: await getMarkdown(
-                    `${url}/part2/a/1_variables.md`
-                  ),
+                  content: await getMarkdown(`${url}/part2/a/1_variables.md`),
                 },
               ],
             },
