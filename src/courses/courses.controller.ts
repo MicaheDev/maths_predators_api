@@ -32,8 +32,35 @@ async function getCoursesES() {
               contents: [
                 {
                   title: "Numeros naturales",
+                  id: "numeros_naturales",
+
+                  path: "es/contents/part1/teoria_de_los_numeros#numeros_naturales",
                   content: await getMarkdown(
                     `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Numeros enteros",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros#numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Numeros racionales",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros#numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "Numeros reales",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros#numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
                   ),
                 },
               ],
@@ -58,6 +85,8 @@ async function getCoursesES() {
               contents: [
                 {
                   title: "Variables",
+                  id: "variables",
+                  path: "es/contents/part2/concepto_de_variable_y_expresiones_algebraicas#variables",
                   content: await getMarkdown(`${url}/part2/a/1_variables.md`),
                 },
               ],
