@@ -19,18 +19,9 @@ app.get("/", (_req, res) => {
 });
 
 app.use("/api", coursesRouter);
+
 // Inicio del servidor
 server.listen(setting.PORT, () => {
   logger.info(`Servidor corriendo en http://localhost:${setting.PORT || 3001}`);
 });
 
-// Middleware de manejo de errores
-app.use((err: any, _req, res: any) => {
-  console.error(err.message);
-  res.json({
-    error: {
-      status: err.status || 500,
-      message: err.message,
-    },
-  });
-});
