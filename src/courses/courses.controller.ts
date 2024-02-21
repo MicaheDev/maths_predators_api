@@ -65,6 +65,201 @@ async function getCoursesES() {
                 },
               ],
             },
+            {
+              subPart: "b",
+              name: "Operaciones Básicas",
+              description: await getMarkdown(`${url}/part1/a/index.md`),
+              contents: [
+                {
+                  title: "Suma",
+                  id: "numeros_naturales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Resta",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Multiplicación",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "División",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
+                  ),
+                },
+              ],
+            },
+            {
+              subPart: "c",
+              name: "Propiedades de las operaciones aritméticas",
+              description: await getMarkdown(`${url}/part1/a/index.md`),
+              contents: [
+                {
+                  title: "Numeros naturales",
+                  id: "numeros_naturales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Numeros enteros",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Numeros racionales",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "Numeros reales",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
+                  ),
+                },
+              ],
+            },
+            {
+              subPart: "d",
+              name: "Orden de operaciones (PEMDAS/BODMAS)",
+              description: await getMarkdown(`${url}/part1/a/index.md`),
+              contents: [
+                {
+                  title: "Numeros naturales",
+                  id: "numeros_naturales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Numeros enteros",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Numeros racionales",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "Numeros reales",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
+                  ),
+                },
+              ],
+            },
+            {
+              subPart: "e",
+              name: "Números primos y compuestos",
+              description: await getMarkdown(`${url}/part1/a/index.md`),
+              contents: [
+                {
+                  title: "Numeros naturales",
+                  id: "numeros_naturales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Numeros enteros",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Numeros racionales",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "Numeros reales",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
+                  ),
+                },
+              ],
+            },
+            {
+              subPart: "f",
+              name: "Factores y múltiplos",
+              description: await getMarkdown(`${url}/part1/a/index.md`),
+              contents: [
+                {
+                  title: "Numeros naturales",
+                  id: "numeros_naturales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/1_numeros_naturales.md`
+                  ),
+                },
+                {
+                  title: "Numeros enteros",
+                  id: "numeros_enteros",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  content: await getMarkdown(
+                    `${url}/part1/a/2_numeros_enteros.md`
+                  ),
+                },
+                {
+                  title: "Numeros racionales",
+                  id: "numeros_racionales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/3_numeros_racionales.md`
+                  ),
+                },
+                {
+                  title: "Numeros reales",
+                  id: "numeros_reales",
+                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  content: await getMarkdown(
+                    `${url}/part1/a/4_numeros_reales.md`
+                  ),
+                },
+              ],
+            },
           ],
         },
         {
