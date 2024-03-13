@@ -68,42 +68,43 @@ async function getCoursesES() {
             {
               subPart: "b",
               name: "Operaciones Básicas",
-              description: await getMarkdown(`${url}/part1/a/index.md`),
+              description: await getMarkdown(`${url}/part1/b/index.md`),
               contents: [
                 {
                   title: "Suma",
-                  id: "numeros_naturales",
-                  path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
+                  id: "suma",
+                  path: "es/contents/part1/operaciones_basicas/suma",
                   content: await getMarkdown(
-                    `${url}/part1/a/1_numeros_naturales.md`
+                    `${url}/part1/b/1_suma.md`
                   ),
                 },
                 {
                   title: "Resta",
-                  id: "numeros_enteros",
-                  path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
+                  id: "resta",
+                  path: "es/contents/part1/operaciones_basicas/resta",
                   content: await getMarkdown(
-                    `${url}/part1/a/2_numeros_enteros.md`
+                    `${url}/part1/b/2_resta.md`
                   ),
                 },
                 {
                   title: "Multiplicación",
-                  id: "numeros_racionales",
-                  path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
+                  id: "multiplicacion",
+                  path: "es/contents/part1/operaciones_basicas/multiplicacion",
                   content: await getMarkdown(
-                    `${url}/part1/a/3_numeros_racionales.md`
+                    `${url}/part1/b/3_multiplicacion.md`
                   ),
                 },
                 {
                   title: "División",
-                  id: "numeros_reales",
-                  path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
+                  id: "division",
+                  path: "es/contents/part1/operaciones_basicas/division",
                   content: await getMarkdown(
-                    `${url}/part1/a/4_numeros_reales.md`
+                    `${url}/part1/b/4_division.md`
                   ),
                 },
               ],
             },
+            /*
             {
               subPart: "c",
               name: "Propiedades de las operaciones aritméticas",
@@ -114,7 +115,7 @@ async function getCoursesES() {
                   id: "numeros_naturales",
                   path: "es/contents/part1/teoria_de_los_numeros/numeros_naturales",
                   content: await getMarkdown(
-                    `${url}/part1/a/1_numeros_naturales.md`
+                    `${url}/part1/c/1_numeros_naturales.md`
                   ),
                 },
                 {
@@ -122,7 +123,7 @@ async function getCoursesES() {
                   id: "numeros_enteros",
                   path: "es/contents/part1/teoria_de_los_numeros/numeros_enteros",
                   content: await getMarkdown(
-                    `${url}/part1/a/2_numeros_enteros.md`
+                    `${url}/part1/c/2_numeros_enteros.md`
                   ),
                 },
                 {
@@ -130,7 +131,7 @@ async function getCoursesES() {
                   id: "numeros_racionales",
                   path: "es/contents/part1/teoria_de_los_numeros/numeros_racionales",
                   content: await getMarkdown(
-                    `${url}/part1/a/3_numeros_racionales.md`
+                    `${url}/part1/c/3_numeros_racionales.md`
                   ),
                 },
                 {
@@ -138,7 +139,7 @@ async function getCoursesES() {
                   id: "numeros_reales",
                   path: "es/contents/part1/teoria_de_los_numeros/numeros_reales",
                   content: await getMarkdown(
-                    `${url}/part1/a/4_numeros_reales.md`
+                    `${url}/part1/c/4_numeros_reales.md`
                   ),
                 },
               ],
@@ -220,7 +221,7 @@ async function getCoursesES() {
                   ),
                 },
               ],
-            },
+            }, 
             {
               subPart: "f",
               name: "Factores y múltiplos",
@@ -260,6 +261,8 @@ async function getCoursesES() {
                 },
               ],
             },
+            */
+            
           ],
         },
         {
